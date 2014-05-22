@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<style> 
+*{
+  margin:0;
+  padding:0;
+}
+ul,li
+{
+    list-style: none;
+}
+body
+{
+  background:#4682B4;
+}
+.div_reward
+{
+    width:400px;
+    margin:100px auto;
+}
+.ul_reward
+{
+    position:relative;
+    width:400px;
+}
+.ul_reward li
+{
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:white;
+    border-width:10px;
+    border-style:solid;
+    border-colors:#ccc #000 #356122;
+}
+.ul_reward span
+{
+    float:left;
+    margin:15px;
+    width:370px;
+    height:370px;
+    background:#ccc;
+}
+</style>
+<script src="/js/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+    <div class='div_reward'>
+        <ul class='ul_reward'>
+          <li>
+             <span>1</span>
+         </li>
+         <li>
+             <span>2</span>
+        </li>
+    </ul>
+
+</div>
+<script>
+var reward_item=$(".ul_reward li");
+var init_top=0;
+var z_index=100;
+for(var i=0;i<reward_item.length;i++){
+  var now_item=reward_item.eq(i);
+  reward_item.eq(i).css('top',init_top+"px");
+  reward_item.eq(i).css('z-index',z_index);
+  init_top+=15;
+  z_index--;
+}
+</script>
+</body>
+</html>
